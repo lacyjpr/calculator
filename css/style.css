@@ -1,0 +1,36 @@
+.jumbotron {
+	width: 290px;
+	padding: 3px;
+	margin: 0;
+	text-align: center;
+	border: 1px solid black;
+	
+}
+
+.jumbotron h2 {
+	font-size: 15px;
+	text-align: right;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.jumbotron h1 {
+	font-size: 30px;
+	text-align: right;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.button-row {
+	display: inline-block;
+	margin-top: 2px;
+
+}
+
+.btn {
+	width: 35px;
+}
+
+.btn-wide {
+	width: 75px;
+}
