@@ -1,8 +1,12 @@
 
-.calc {
+.jumbotron {
 	width: 250px;
+	text-align: center;
+	margin: 40px auto;
+}
+
+ #calc {
 	padding: 27px;
-	margin: 30px;
 	text-align: center;
 	border: 1px solid black;
 	border-radius: 8px;
@@ -11,14 +15,14 @@
 	
 }
 
-.calc h2 {
+.jumbotron h2 {
 	font-size: 15px;
 	text-align: right;
 	margin-top: 0px;
 	margin-bottom: 0px;
 }
 
-.calc h1 {
+.jumbotron h1 {
 	font-size: 30px;
 	text-align: right;
 	margin-top: 0px;
