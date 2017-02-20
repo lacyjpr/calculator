@@ -1,10 +1,12 @@
 .calc {
 	width: 175px;
 	padding: 10px;
-	margin: 0;
+	margin: 20px;
 	text-align: center;
-	border: 1px solid grey;
-	border-radius: 3px;
+	border: 1px solid black;
+	border-radius: 8px;
+	background-color: #00ffff;
+	box-shadow: 3px 10px 20px 1px #706565, inset -1px -6px 12px 0.1px #00b8b8;
 	
 }
 
@@ -24,14 +26,38 @@
 
 .button-row {
 	display: inline-block;
-	margin-top: 2px;
+	margin-top: 4px;
 
 }
 
 .btn {
 	width: 35px;
+	border: 1px solid black;
+	background-color: #ffd019;
+	box-shadow: 0px 4px 5px 0px #00b8b8, inset -1px -3px 3px 1px #b89409;
 }
 
 .btn-wide {
-	width: 75px;
+	width: 74px;
+}
+
+.btn:hover, .btn:focus, .btn:active {
+	background-color: #ffd019;
+}
+
+.allClear:hover, .allClear:focus, .allClear:active {
+	background-color: #ff3a34;	
+}
+
+.clear:hover, .clear:focus, .clear:active {
+	background-color: #ff3a34;
+}
+
+.equals:hover, .equals:focus, .equals:active {
+	background-color: #ff3a34;
+}
+
+.allClear, .clear, .equals {
+	background-color: #ff3a34;
+	box-shadow: 0px 4px 5px 0px #00b8b8, inset -1px -3px 3px 1px #b8211c;
 }
