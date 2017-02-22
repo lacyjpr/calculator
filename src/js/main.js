@@ -14,7 +14,7 @@ $(document).ready(function() {
 		$(".answer").html(solution);
 	});
 
-	$(".1").on("click", function() {
+	$(".btn-1").on("click", function() {
 		formula.push("1");
 		solution = solution + "1";
 
@@ -22,7 +22,7 @@ $(document).ready(function() {
 		$(".answer").html(solution);
 	});
 
-	$(".2").on("click", function() {
+	$(".btn-2").on("click", function() {
 		formula.push("2");
 		solution = solution + "2";
 
@@ -30,7 +30,7 @@ $(document).ready(function() {
 		$(".answer").html(solution);
 	});
 
-	$(".3").on("click", function() {
+	$(".btn-3").on("click", function() {
 		formula.push("3");
 		solution = solution + "3";
 
@@ -38,7 +38,7 @@ $(document).ready(function() {
 		$(".answer").html(solution);
 	});
 
-	$(".4").on("click", function() {
+	$(".btn-4").on("click", function() {
 		formula.push("4");
 		solution = solution + "4";
 
@@ -46,7 +46,7 @@ $(document).ready(function() {
 		$(".answer").html(solution);
 	});
 
-	$(".5").on("click", function() {
+	$(".btn-5").on("click", function() {
 		formula.push("5");
 		solution = solution + "5";
 
@@ -54,7 +54,7 @@ $(document).ready(function() {
 		$(".answer").html(solution);
 	});
 
-	$(".6").on("click", function() {
+	$(".btn-6").on("click", function() {
 		formula.push("6");
 		solution = solution + "6";
 
@@ -62,7 +62,7 @@ $(document).ready(function() {
 		$(".answer").html(solution);
 	});
 
-	$(".7").on("click", function() {
+	$(".btn-7").on("click", function() {
 		formula.push("7");
 		solution = solution + "7";
 
@@ -70,7 +70,7 @@ $(document).ready(function() {
 		$(".answer").html(solution);
 	});
 
-	$(".8").on("click", function() {
+	$(".btn-8").on("click", function() {
 		formula.push("8");
 		solution = solution + "8";
 
@@ -78,7 +78,7 @@ $(document).ready(function() {
 		$(".answer").html(solution);
 	});
 
-	$(".9").on("click", function() {
+	$(".btn-9").on("click", function() {
 		formula.push("9");
 		solution = solution + "9";
 
@@ -134,24 +134,37 @@ $(document).ready(function() {
 		// Keep the final solution in formula
 		formula = [finalSolution];
 		// Display the final solution
-		$(".answer").html(finalSolution)
+		$(".answer").html(finalSolution);
+	});
 
 	$(".allClear").on("click", function() {
 		formula = [];
 		solution = "";
+		
+		console.log("allClear clicked");
+		console.log(formula);
+		console.log(solution);
 
-		$(".problem").html(0);
-		$(".answer").html(0);
+		$(".problem").html("0");
+		$(".answer").html("0");
 	});
 
 	$(".clear").on("click", function() {
 		formula.splice(-1,1);
 		solution = solution.slice(0, -1);
 
-		$(".problem").html(formula);
-		$(".answer").html(solution);
+		console.log("clear clicked");
+		console.log(formula);
+		console.log(solution);
+
+		if (formula.length = 0){
+			$(".problem").html("0");
+			$(".answer").html("0");
+		} else {
+			$(".problem").html(formula);
+			$(".answer").html(solution);
+		}
 	});
 
-	});
 
 });
