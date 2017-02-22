@@ -4,9 +4,9 @@ $(document).ready(function() {
 	// String to hold the current entry & solution
 	var solution = "";
 
-	$(".0").on("click", function() {
+	$(".btn-0").on("click", function() {
 		formula.push("0");
-		solution = solution + "0";
+		solution = "0";
 
 		// display the formula
 		$(".problem").html(formula);
@@ -16,7 +16,7 @@ $(document).ready(function() {
 
 	$(".btn-1").on("click", function() {
 		formula.push("1");
-		solution = solution + "1";
+		solution = "1";
 
 		$(".problem").html(formula);
 		$(".answer").html(solution);
@@ -24,7 +24,7 @@ $(document).ready(function() {
 
 	$(".btn-2").on("click", function() {
 		formula.push("2");
-		solution = solution + "2";
+		solution = "2";
 
 		$(".problem").html(formula);
 		$(".answer").html(solution);
@@ -32,7 +32,7 @@ $(document).ready(function() {
 
 	$(".btn-3").on("click", function() {
 		formula.push("3");
-		solution = solution + "3";
+		solution = "3";
 
 		$(".problem").html(formula);
 		$(".answer").html(solution);
@@ -40,7 +40,7 @@ $(document).ready(function() {
 
 	$(".btn-4").on("click", function() {
 		formula.push("4");
-		solution = solution + "4";
+		solution = "4";
 
 		$(".problem").html(formula);
 		$(".answer").html(solution);
@@ -48,7 +48,7 @@ $(document).ready(function() {
 
 	$(".btn-5").on("click", function() {
 		formula.push("5");
-		solution = solution + "5";
+		solution = "5";
 
 		$(".problem").html(formula);
 		$(".answer").html(solution);
@@ -56,7 +56,7 @@ $(document).ready(function() {
 
 	$(".btn-6").on("click", function() {
 		formula.push("6");
-		solution = solution + "6";
+		solution = "6";
 
 		$(".problem").html(formula);
 		$(".answer").html(solution);
@@ -64,7 +64,7 @@ $(document).ready(function() {
 
 	$(".btn-7").on("click", function() {
 		formula.push("7");
-		solution = solution + "7";
+		solution = "7";
 
 		$(".problem").html(formula);
 		$(".answer").html(solution);
@@ -72,7 +72,7 @@ $(document).ready(function() {
 
 	$(".btn-8").on("click", function() {
 		formula.push("8");
-		solution = solution + "8";
+		solution = "8";
 
 		$(".problem").html(formula);
 		$(".answer").html(solution);
@@ -80,7 +80,7 @@ $(document).ready(function() {
 
 	$(".btn-9").on("click", function() {
 		formula.push("9");
-		solution = solution + "9";
+		solution = "9";
 
 		$(".problem").html(formula);
 		$(".answer").html(solution);
@@ -88,7 +88,7 @@ $(document).ready(function() {
 
 	$(".decimal").on("click", function() {
 		formula.push(".");
-		solution = solution + ".";
+		solution = ".";
 
 		$(".problem").html(formula);
 		$(".answer").html(solution);
@@ -96,7 +96,7 @@ $(document).ready(function() {
 
 	$(".add").on("click", function() {
 		formula.push("+");
-		solution = solution + "+";
+		solution = "+";
 
 		$(".problem").html(formula);
 		$(".answer").html(solution);
@@ -104,7 +104,7 @@ $(document).ready(function() {
 
 	$(".subtract").on("click", function() {
 		formula.push("-");
-		solution = solution + "-";
+		solution = "-";
 
 		$(".problem").html(formula);
 		$(".answer").html(solution);
@@ -112,7 +112,7 @@ $(document).ready(function() {
 
 	$(".multiply").on("click", function() {
 		formula.push("*");
-		solution = solution + "*";
+		solution = "*";
 
 		$(".problem").html(formula);
 		$(".answer").html(solution);
@@ -120,7 +120,7 @@ $(document).ready(function() {
 
 	$(".divide").on("click", function() {
 		formula.push("/");
-		solution = solution + "/";
+		solution = "/";
 
 		$(".problem").html(formula);
 		$(".answer").html(solution);
@@ -157,7 +157,7 @@ $(document).ready(function() {
 		console.log(formula);
 		console.log(solution);
 
-		if (formula.length = 0){
+		if (formula.length === 0){
 			$(".problem").html("0");
 			$(".answer").html("0");
 		} else {
