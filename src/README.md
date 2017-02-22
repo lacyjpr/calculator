@@ -1,1 +1,0 @@
-JavaScript/jQuery calculator
