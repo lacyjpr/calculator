@@ -122,36 +122,36 @@ $(document).ready(function() {
 		// Prevent multiple operators in a row & at the start of a formula
 		if (formula[formula.length -1] !== "+" && formula[formula.length -1] !== "-" && formula[formula.length -1] !== "*" && formula[formula.length -1] !== "/" && formula.length > 0) {
 			formula.push("+");
-			solution = "+";
+			solution = "";
 			$(".problem").html(formula);
-			$(".answer").html(solution);
+			$(".answer").html("+");
 		}
 	});
 
 	$(".subtract").on("click", function() {
 		if (formula[formula.length -1] !== "+" && formula[formula.length -1] !== "-" && formula[formula.length -1] !== "*" && formula[formula.length -1] !== "/" && formula.length > 0) {
 			formula.push("-");
-			solution = "-";
+			solution = "";
 			$(".problem").html(formula);
-			$(".answer").html(solution);
+			$(".answer").html("-");
 		}
 	});
 
 	$(".multiply").on("click", function() {
 		if (formula[formula.length -1] !== "+" && formula[formula.length -1] !== "-" && formula[formula.length -1] !== "*" && formula[formula.length -1] !== "/" && formula.length > 0) {
 			formula.push("*");
-			solution = "*";
+			solution = "";
 			$(".problem").html(formula);
-			$(".answer").html(solution);
+			$(".answer").html("*");
 		}
 	});		
 
 	$(".divide").on("click", function() {
 		if (formula[formula.length -1] !== "+" && formula[formula.length -1] !== "-" && formula[formula.length -1] !== "*" && formula[formula.length -1] !== "/" && formula.length > 0) {
 			formula.push("/");
-			solution = "/";
+			solution = "";
 			$(".problem").html(formula);
-			$(".answer").html(solution);
+			$(".answer").html("/");
 		}
 	});
 
