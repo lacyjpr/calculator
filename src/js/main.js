@@ -119,35 +119,40 @@ $(document).ready(function() {
 	});
 
 	$(".add").on("click", function() {
-		formula.push("+");
-		solution = "+";
-
-		$(".problem").html(formula);
-		$(".answer").html(solution);
+		// Prevent multiple operators in a row & at the start of a formula
+		if (formula[formula.length -1] !== "+" && formula[formula.length -1] !== "-" && formula[formula.length -1] !== "*" && formula[formula.length -1] !== "/" && formula.length > 0) {
+			formula.push("+");
+			solution = "+";
+			$(".problem").html(formula);
+			$(".answer").html(solution);
+		}
 	});
 
 	$(".subtract").on("click", function() {
-		formula.push("-");
-		solution = "-";
-
-		$(".problem").html(formula);
-		$(".answer").html(solution);
+		if (formula[formula.length -1] !== "+" && formula[formula.length -1] !== "-" && formula[formula.length -1] !== "*" && formula[formula.length -1] !== "/" && formula.length > 0) {
+			formula.push("-");
+			solution = "-";
+			$(".problem").html(formula);
+			$(".answer").html(solution);
+		}
 	});
 
 	$(".multiply").on("click", function() {
-		formula.push("*");
-		solution = "*";
-
-		$(".problem").html(formula);
-		$(".answer").html(solution);
+		if (formula[formula.length -1] !== "+" && formula[formula.length -1] !== "-" && formula[formula.length -1] !== "*" && formula[formula.length -1] !== "/" && formula.length > 0) {
+			formula.push("*");
+			solution = "*";
+			$(".problem").html(formula);
+			$(".answer").html(solution);
+		}
 	});		
 
 	$(".divide").on("click", function() {
-		formula.push("/");
-		solution = "/";
-
-		$(".problem").html(formula);
-		$(".answer").html(solution);
+		if (formula[formula.length -1] !== "+" && formula[formula.length -1] !== "-" && formula[formula.length -1] !== "*" && formula[formula.length -1] !== "/" && formula.length > 0) {
+			formula.push("/");
+			solution = "/";
+			$(".problem").html(formula);
+			$(".answer").html(solution);
+		}
 	});
 
 	$(".equals").on("click", function() {
@@ -164,10 +169,6 @@ $(document).ready(function() {
 	$(".allClear").on("click", function() {
 		formula = [];
 		solution = "";
-		
-		console.log("allClear clicked");
-		console.log(formula);
-		console.log(solution);
 
 		$(".problem").html("0");
 		$(".answer").html("0");
@@ -176,10 +177,6 @@ $(document).ready(function() {
 	$(".clear").on("click", function() {
 		formula.splice(-1,1);
 		solution = solution.slice(0, -1);
-
-		console.log("clear clicked");
-		console.log(formula);
-		console.log(solution);
 
 		if (formula.length === 0){
 			$(".problem").html("0");
