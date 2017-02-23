@@ -7,6 +7,11 @@ $(document).ready(function() {
 	var solution = "";
 
 	$(".btn-0").on("click", function() {
+		// If formula already holds a value from a previous calculation and a number is clicked, clear formula
+		if (typeof formula[0] === "number" && formula.length === 1) {
+			formula = [];
+			solution = "";
+		}
 		// Push the digit into formula if solution's length is less than 11
 		// If solution already contains only a zero do nothing
 		// Prevent divide by zero
@@ -21,6 +26,10 @@ $(document).ready(function() {
 	});
 
 	$(".btn-1").on("click", function() {
+		if (typeof formula[0] === "number" && formula.length === 1) {
+			formula = [];
+			solution = "";
+		}
 		// Prevent multiple zeros at the beginning of a number
 		if (solution === "0"){
 			solution = "1";
@@ -37,6 +46,10 @@ $(document).ready(function() {
 	});
 
 	$(".btn-2").on("click", function() {
+		if (typeof formula[0] === "number" && formula.length === 1) {
+			formula = [];
+			solution = "";
+		}
 		if (solution === "0"){
 			solution = "2";
 			formula.pop();
@@ -50,6 +63,10 @@ $(document).ready(function() {
 	});
 
 	$(".btn-3").on("click", function() {
+		if (typeof formula[0] === "number" && formula.length === 1) {
+			formula = [];
+			solution = "";
+		}
 		if (solution === "0"){
 			solution = "3";
 			formula.pop();
@@ -63,6 +80,10 @@ $(document).ready(function() {
 	});
 
 	$(".btn-4").on("click", function() {
+		if (typeof formula[0] === "number" && formula.length === 1) {
+			formula = [];
+			solution = "";
+		}
 		if (solution === "0"){
 			solution = "4";
 			formula.pop();
@@ -76,6 +97,10 @@ $(document).ready(function() {
 	});
 
 	$(".btn-5").on("click", function() {
+		if (typeof formula[0] === "number" && formula.length === 1) {
+			formula = [];
+			solution = "";
+		}
 		if (solution === "0"){
 			solution = "5";
 			formula.pop();
@@ -89,6 +114,10 @@ $(document).ready(function() {
 	});
 
 	$(".btn-6").on("click", function() {
+		if (typeof formula[0] === "number" && formula.length === 1) {
+			formula = [];
+			solution = "";
+		}
 		if (solution === "0"){
 			solution = "6";
 			formula.pop();
@@ -100,7 +129,12 @@ $(document).ready(function() {
 		$(".problem").html(formula);
 		$(".answer").html(solution);
 	});
+
 	$(".btn-7").on("click", function() {
+		if (typeof formula[0] === "number" && formula.length === 1) {
+			formula = [];
+			solution = "";
+		}
 		if (solution === "0"){
 			solution = "7";
 			formula.pop();
@@ -114,6 +148,10 @@ $(document).ready(function() {
 	});
 
 	$(".btn-8").on("click", function() {
+		if (typeof formula[0] === "number" && formula.length === 1) {
+			formula = [];
+			solution = "";
+		}
 		if (solution === "0"){
 			solution = "8";
 			formula.pop();
@@ -127,6 +165,10 @@ $(document).ready(function() {
 	});
 
 	$(".btn-9").on("click", function() {
+		if (typeof formula[0] === "number" && formula.length === 1) {
+			formula = [];
+			solution = "";
+		}
 		if (solution === "0"){
 			solution = "9";
 			formula.pop();
