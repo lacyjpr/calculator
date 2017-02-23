@@ -9,7 +9,8 @@ $(document).ready(function() {
 	$(".btn-0").on("click", function() {
 		// Push the digit into formula if solution's length is less than 11
 		// If solution already contains only a zero do nothing
-		if (solution.length < 11 && solution !== "0") {
+		// Prevent divide by zero
+		if (solution.length < 11 && solution !== "0" && formula[formula.length -1] !== "/") {
 			formula.push("0");
 			solution = solution + "0";
 		}
