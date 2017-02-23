@@ -109,7 +109,7 @@ $(document).ready(function() {
 	});
 
 	$(".decimal").on("click", function() {
-		if (solution.length < 11) {
+		if (solution.length < 11 && solution.indexOf(".") === -1) {
 			formula.push(".");
 			solution = solution + ".";
 		}
