@@ -257,15 +257,12 @@ $(document).ready(function() {
 	$(".clear").on("click", function() {
 		formula.splice(-1,1);
 		solution = solution.slice(0, -1);
-		console.log("clear clicked");
-		console.log("formula " + formula);
-		console.log("solution " + solution);
-		if (formula.length === 0) {
+ 
+		if (formula.length === 0){
+			formula = [];
+			solution = "";
 			$(".problem").html("0");
-			$(".answer").html(solution);
-		if (solution.length === 0) {
 			$(".answer").html("0");
-		}
 		} else {
 			$(".problem").html(formula);
 			$(".answer").html(solution);
