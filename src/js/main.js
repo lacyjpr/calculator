@@ -256,16 +256,14 @@ $(document).ready(function() {
 
 	$(".clear").on("click", function() {
 		formula.splice(-1,1);
-		solution = solution.slice(0, -1);
- 
-		if (formula.length === 0){
-			formula = [];
-			solution = "";
+		solution = solution.substring(0, solution.length -1);
+		$(".problem").html(formula);
+		$(".answer").html(solution);
+		if (formula.length === 0) {
 			$(".problem").html("0");
+		}
+		if (solution.length === 0) {
 			$(".answer").html("0");
-		} else {
-			$(".problem").html(formula);
-			$(".answer").html(solution);
 		}
 	});
 
