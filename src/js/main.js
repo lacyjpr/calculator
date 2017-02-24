@@ -240,6 +240,7 @@ $(document).ready(function() {
 		} else {
 			// Keep the final solution in formula
 			formula = [finalSolution];
+			solution = finalSolution.toString();
 			// Display the final solution
 			$(".answer").html(finalSolution);
 		}
@@ -256,10 +257,15 @@ $(document).ready(function() {
 	$(".clear").on("click", function() {
 		formula.splice(-1,1);
 		solution = solution.slice(0, -1);
-
-		if (formula.length === 0){
+		console.log("clear clicked");
+		console.log("formula " + formula);
+		console.log("solution " + solution);
+		if (formula.length === 0) {
 			$(".problem").html("0");
+			$(".answer").html(solution);
+		if (solution.length === 0) {
 			$(".answer").html("0");
+		}
 		} else {
 			$(".problem").html(formula);
 			$(".answer").html(solution);
