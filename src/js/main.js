@@ -7,7 +7,8 @@ $(document).ready(function() {
 	var solution = "";
 
 	// Handle button clicks
-	$(".btn").on("click", function(event) {
+	$(".btn").on("click", function() {
+		new Audio("/media/click.mp3").play()
 		var val = ($(this).text());
 		switch (val) {
 		case "0":
@@ -44,6 +45,9 @@ $(document).ready(function() {
 			break;
 		case "AC":
 			allClear();
+			break;
+		case "C":
+			clear();
 			break;
 		}
 	});
@@ -85,7 +89,7 @@ $(document).ready(function() {
 		}
 		$(".problem").html(formula);
 		$(".answer").html(solution);
-	};
+	}
 
 	function decimal(val) {
 		// Prevent multiple decimal points in an entry
@@ -106,7 +110,7 @@ $(document).ready(function() {
 			$(".problem").html(formula);
 			$(".answer").html(val);
 		}
-	};
+	}
 
 	function equals() {
 		// evaluate the formula
@@ -140,7 +144,7 @@ $(document).ready(function() {
 		$(".answer").html("0");
 	}
 
-	$(".clear").on("click", function() {
+	function clear() {
 		formula.splice(-1,1);
 		solution = solution.substring(0, solution.length -1);
 		$(".problem").html(formula);
@@ -151,6 +155,6 @@ $(document).ready(function() {
 		if (solution.length === 0) {
 			$(".answer").html("0");
 		}
-	});
+	}
 
 });
