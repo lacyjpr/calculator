@@ -39,8 +39,9 @@ $(document).ready(function() {
 			val = "/";
 			operator(val);
 			break;
-
-
+		case "=":
+			equals();
+			break;
 		}
 	});
 
@@ -104,7 +105,7 @@ $(document).ready(function() {
 		}
 	};
 
-	$(".equals").on("click", function() {
+	function equals() {
 		// evaluate the formula
 		var str = formula.join("");
 		var finalSolution = eval(str);
@@ -126,7 +127,7 @@ $(document).ready(function() {
 			// Display the final solution
 			$(".answer").html(finalSolution);
 		}
-	});
+	}
 
 	$(".allClear").on("click", function() {
 		formula = [];
