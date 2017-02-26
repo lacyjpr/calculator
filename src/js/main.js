@@ -243,9 +243,6 @@ $(document).ready(function() {
 		// Prevent scientific notation + remove trailing zeros credit: http://stackoverflow.com/questions/1015402/chop-unused-decimals-with-javascript
 		finalSolution = finalSolution.toFixed(11).replace(/(\.[0-9]*?)0+$/, "$1");
 		console.log("finalSolution toFixed " + finalSolution);
-		// Convert to string to remove trailing zeros credit: http://stackoverflow.com/questions/3612744/remove-insignificant-trailing-zeros-from-a-number
-		//finalSolution = finalSolution.toString();
-		console.log("finalSolution toString " + finalSolution);
 		if (finalSolution > 99999999999 || finalSolution < -9999999999){
 			$(".answer").html("Overflow!");
 		} else {
