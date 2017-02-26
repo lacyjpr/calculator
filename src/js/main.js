@@ -193,7 +193,7 @@ $(document).ready(function() {
 
 	$(".add").on("click", function() {
 		// Prevent multiple operators in a row & at the start of a formula
-		if (formula[formula.length -1] !== "+" && formula[formula.length -1] !== "-" && formula[formula.length -1] !== "*" && formula[formula.length -1] !== "/" && formula.length > 0) {
+		if (formula[formula.length -1] !== "+" && formula[formula.length -1] !== "-" && formula[formula.length -1] !== "*" && formula[formula.length -1] !== "/" && formula[formula.length -1] !== "." && formula.length > 0) {
 			formula.push("+");
 			// Empty solution so next digit entered doesn't also display the operator
 			solution = "";
@@ -203,7 +203,7 @@ $(document).ready(function() {
 	});
 
 	$(".subtract").on("click", function() {
-		if (formula[formula.length -1] !== "+" && formula[formula.length -1] !== "-" && formula[formula.length -1] !== "*" && formula[formula.length -1] !== "/" && formula.length > 0) {
+		if (formula[formula.length -1] !== "+" && formula[formula.length -1] !== "-" && formula[formula.length -1] !== "*" && formula[formula.length -1] !== "/" && formula[formula.length -1] !== "." && formula.length > 0) {
 			formula.push("-");
 			solution = "";
 			$(".problem").html(formula);
@@ -212,7 +212,7 @@ $(document).ready(function() {
 	});
 
 	$(".multiply").on("click", function() {
-		if (formula[formula.length -1] !== "+" && formula[formula.length -1] !== "-" && formula[formula.length -1] !== "*" && formula[formula.length -1] !== "/" && formula.length > 0) {
+		if (formula[formula.length -1] !== "+" && formula[formula.length -1] !== "-" && formula[formula.length -1] !== "*" && formula[formula.length -1] !== "/" && formula[formula.length -1] !== "." && formula.length > 0) {
 			formula.push("*");
 			solution = "";
 			$(".problem").html(formula);
@@ -221,7 +221,7 @@ $(document).ready(function() {
 	});		
 
 	$(".divide").on("click", function() {
-		if (formula[formula.length -1] !== "+" && formula[formula.length -1] !== "-" && formula[formula.length -1] !== "*" && formula[formula.length -1] !== "/" && formula.length > 0) {
+		if (formula[formula.length -1] !== "+" && formula[formula.length -1] !== "-" && formula[formula.length -1] !== "*" && formula[formula.length -1] !== "/" && formula[formula.length -1] !== "." && formula.length > 0) {
 			formula.push("/");
 			solution = "";
 			$(".problem").html(formula);
@@ -233,8 +233,9 @@ $(document).ready(function() {
 		// evaluate the formula
 		var str = formula.join("");
 		var finalSolution = eval(str);
-		// round to 5 decimal places
-		finalSolution = Math.round(100000 * finalSolution) / 100000;
+		// round to 11 decimal places
+		finalSolution = Math.round(100000000000 * finalSolution) / 100000000000;
+
 		if (finalSolution > 99999999999 || finalSolution < -9999999999){
 			$(".answer").html("Overflow!");
 		} else {
