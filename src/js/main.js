@@ -42,6 +42,9 @@ $(document).ready(function() {
 		case "=":
 			equals();
 			break;
+		case "AC":
+			allClear();
+			break;
 		}
 	});
 
@@ -129,13 +132,13 @@ $(document).ready(function() {
 		}
 	}
 
-	$(".allClear").on("click", function() {
+	function allClear() {
 		formula = [];
 		solution = "";
 
 		$(".problem").html("0");
 		$(".answer").html("0");
-	});
+	}
 
 	$(".clear").on("click", function() {
 		formula.splice(-1,1);
