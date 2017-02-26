@@ -6,7 +6,7 @@ $(document).ready(function() {
 
 	// Handle button clicks
 	$(".btn").on("click", function() {
-		new Audio("../media/click1.mp3").play();
+		new Audio("/calculator/media/click1.mp3").play();
 		var val = ($(this).text());
 		switch (val) {
 		case "0":
