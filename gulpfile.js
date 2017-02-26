@@ -10,7 +10,7 @@ var paths = {
 	scripts: ['src/js/*.js'],
 	styles: ['src/css/*.css'],
 	content: ['src/*.html'],
-	copy: ['src/*.ico']
+	copy: ['src/media/*.mp3']
 }
 
 // copy styles for critical
@@ -59,7 +59,7 @@ gulp.task('content', function(){
 // Copy the .ico file to dist
 gulp.task('copy', function(){
 	return gulp.src(paths.copy)
-		.pipe(gulp.dest('dist'));
+		.pipe(gulp.dest('dist/media'));
 });
 
 // Watches for changes and execute appropriate tasks
