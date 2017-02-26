@@ -22,7 +22,22 @@ $(document).ready(function() {
 		case "7":
 		case "8":
 		case "9":
-			num(val);
+			digit(val);
+			break;
+		case ".":
+			decimal(val);
+			break;
+		case "+":
+		case "-":
+			operator(val);
+			break;
+		case "x":
+			val = "*";
+			operator(val);
+			break;
+		case "÷":
+			val = "/";
+			operator(val);
 			break;
 
 
@@ -68,53 +83,26 @@ $(document).ready(function() {
 		$(".answer").html(solution);
 	};
 
-	$(".decimal").on("click", function() {
+	function decimal(val) {
 		// Prevent multiple decimal points in an entry
 		if (solution.length < 11 && solution.indexOf(".") === -1) {
-			formula.push(".");
-			solution = solution + ".";
+			formula.push(val);
+			solution = solution + val;
 		}
 		$(".problem").html(formula);
 		$(".answer").html(solution);
-	});
+	}
 
-	$(".add").on("click", function() {
+	function operator(val){
 		// Prevent multiple operators in a row & at the start of a formula
 		if (formula[formula.length -1] !== "+" && formula[formula.length -1] !== "-" && formula[formula.length -1] !== "*" && formula[formula.length -1] !== "/" && formula[formula.length -1] !== "." && formula.length > 0) {
-			formula.push("+");
+			formula.push(val);
 			// Empty solution so next digit entered doesn't also display the operator
 			solution = "";
 			$(".problem").html(formula);
-			$(".answer").html("+");
+			$(".answer").html(val);
 		}
-	});
-
-	$(".subtract").on("click", function() {
-		if (formula[formula.length -1] !== "+" && formula[formula.length -1] !== "-" && formula[formula.length -1] !== "*" && formula[formula.length -1] !== "/" && formula[formula.length -1] !== "." && formula.length > 0) {
-			formula.push("-");
-			solution = "";
-			$(".problem").html(formula);
-			$(".answer").html("-");
-		}
-	});
-
-	$(".multiply").on("click", function() {
-		if (formula[formula.length -1] !== "+" && formula[formula.length -1] !== "-" && formula[formula.length -1] !== "*" && formula[formula.length -1] !== "/" && formula[formula.length -1] !== "." && formula.length > 0) {
-			formula.push("*");
-			solution = "";
-			$(".problem").html(formula);
-			$(".answer").html("*");
-		}
-	});		
-
-	$(".divide").on("click", function() {
-		if (formula[formula.length -1] !== "+" && formula[formula.length -1] !== "-" && formula[formula.length -1] !== "*" && formula[formula.length -1] !== "/" && formula[formula.length -1] !== "." && formula.length > 0) {
-			formula.push("/");
-			solution = "";
-			$(".problem").html(formula);
-			$(".answer").html("/");
-		}
-	});
+	};
 
 	$(".equals").on("click", function() {
 		// evaluate the formula
@@ -126,6 +114,9 @@ $(document).ready(function() {
 		finalSolution = Math.round(100000000000 * finalSolution) / 100000000000;
 		// Prevent scientific notation + remove trailing zeros credit: http://stackoverflow.com/questions/1015402/chop-unused-decimals-with-javascript
 		finalSolution = finalSolution.toFixed(11).replace(/(\.[0-9]*?)0+$/, "$1");
+		// Remove trailing decimal points credit: credit: http://stackoverflow.com/questions/1015402/chop-unused-decimals-with-javascript
+		finalSolution = finalSolution.replace(/\.$/, "");
+		// Prevent answers too long for display
 		if (finalSolution > 99999999999 || finalSolution < -9999999999){
 			$(".answer").html("Overflow!");
 		} else {
