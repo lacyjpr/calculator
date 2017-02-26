@@ -233,9 +233,15 @@ $(document).ready(function() {
 		// evaluate the formula
 		var str = formula.join("");
 		var finalSolution = eval(str);
-		// round to 11 decimal places
+		console.log("finalSolution " + finalSolution);
+		finalSolution = parseFloat(finalSolution);
+		// Round to 11 decimal places
 		finalSolution = Math.round(100000000000 * finalSolution) / 100000000000;
-
+		// Prevent scientific notation
+		finalSolution = finalSolution.toFixed(9);
+		// Convert to string to remove trailing zeros credit: http://stackoverflow.com/questions/3612744/remove-insignificant-trailing-zeros-from-a-number
+		finalSolution = parseFloat(finalSolution);
+		console.log("finalSolution rounded " + finalSolution);
 		if (finalSolution > 99999999999 || finalSolution < -9999999999){
 			$(".answer").html("Overflow!");
 		} else {
