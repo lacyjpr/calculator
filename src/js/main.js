@@ -1,5 +1,3 @@
-// Credit http://codepen.io/mokada42991/pen/ZLRgOE?editors=0010 for inspiration
-
 $(document).ready(function() {
 	// Array to hold the formula
 	var formula = [];
@@ -8,7 +6,7 @@ $(document).ready(function() {
 
 	// Handle button clicks
 	$(".btn").on("click", function() {
-		new Audio("/media/click1.mp3").play()
+		new Audio("/calculator/media/click1.mp3").play();
 		var val = ($(this).text());
 		switch (val) {
 		case "0":
