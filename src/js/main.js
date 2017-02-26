@@ -6,7 +6,30 @@ $(document).ready(function() {
 	// String to hold the current entry & solution
 	var solution = "";
 
-	$(".btn-0").on("click", function() {
+	// Handle button clicks
+	$(".btn").on("click", function(event) {
+		var val = ($(this).text());
+		switch (val) {
+		case "0":
+			zero(val);
+			break;
+		case "1":
+		case "2":
+		case "3":
+		case "4":
+		case "5":
+		case "6":
+		case "7":
+		case "8":
+		case "9":
+			num(val);
+			break;
+
+
+		}
+	});
+
+	function zero(val) {
 		// If formula already holds a value from a previous calculation and a number is clicked, clear formula
 		if (typeof formula[0] === "number" && formula.length === 1) {
 			formula = [];
@@ -16,170 +39,34 @@ $(document).ready(function() {
 		// If solution already contains only a zero do nothing
 		// Prevent divide by zero
 		if (solution.length < 11 && solution !== "0" && formula[formula.length -1] !== "/") {
-			formula.push("0");
-			solution = solution + "0";
+			formula.push(val);
+			solution = solution + val;
 		}
 		// display the formula
 		$(".problem").html(formula);
 		// display the current value
 		$(".answer").html(solution);
-	});
+	}
 
-	$(".btn-1").on("click", function() {
+	function digit(val) {
 		if (typeof formula[0] === "number" && formula.length === 1) {
 			formula = [];
 			solution = "";
 		}
 		// Prevent multiple zeros at the beginning of a number
 		if (solution === "0"){
-			solution = "1";
+			solution = val;
 			formula.pop();
-			formula.push("1");
+			formula.push(val);
 		}
 		// Push the digit into formula if solution's length is less than 11
 		else if (solution.length < 11) {
-			formula.push("1");
-			solution = solution + "1";
+			formula.push(val);
+			solution = solution + val;
 		}
 		$(".problem").html(formula);
 		$(".answer").html(solution);
-	});
-
-	$(".btn-2").on("click", function() {
-		if (typeof formula[0] === "number" && formula.length === 1) {
-			formula = [];
-			solution = "";
-		}
-		if (solution === "0"){
-			solution = "2";
-			formula.pop();
-			formula.push("2");
-		} else if (solution.length < 11) {
-			formula.push("2");
-			solution = solution + "2";
-		}
-		$(".problem").html(formula);
-		$(".answer").html(solution);
-	});
-
-	$(".btn-3").on("click", function() {
-		if (typeof formula[0] === "number" && formula.length === 1) {
-			formula = [];
-			solution = "";
-		}
-		if (solution === "0"){
-			solution = "3";
-			formula.pop();
-			formula.push("3");
-		} else if (solution.length < 11) {
-			formula.push("3");
-			solution = solution + "3";
-		}
-		$(".problem").html(formula);
-		$(".answer").html(solution);
-	});
-
-	$(".btn-4").on("click", function() {
-		if (typeof formula[0] === "number" && formula.length === 1) {
-			formula = [];
-			solution = "";
-		}
-		if (solution === "0"){
-			solution = "4";
-			formula.pop();
-			formula.push("4");
-		} else if (solution.length < 11) {
-			formula.push("4");
-			solution = solution + "4";
-		}
-		$(".problem").html(formula);
-		$(".answer").html(solution);
-	});
-
-	$(".btn-5").on("click", function() {
-		if (typeof formula[0] === "number" && formula.length === 1) {
-			formula = [];
-			solution = "";
-		}
-		if (solution === "0"){
-			solution = "5";
-			formula.pop();
-			formula.push("5");
-		} else if (solution.length < 11) {
-			formula.push("5");
-			solution = solution + "5";
-		}
-		$(".problem").html(formula);
-		$(".answer").html(solution);
-	});
-
-	$(".btn-6").on("click", function() {
-		if (typeof formula[0] === "number" && formula.length === 1) {
-			formula = [];
-			solution = "";
-		}
-		if (solution === "0"){
-			solution = "6";
-			formula.pop();
-			formula.push("6");
-		} else if (solution.length < 11) {
-			formula.push("6");
-			solution = solution + "6";
-		}
-		$(".problem").html(formula);
-		$(".answer").html(solution);
-	});
-
-	$(".btn-7").on("click", function() {
-		if (typeof formula[0] === "number" && formula.length === 1) {
-			formula = [];
-			solution = "";
-		}
-		if (solution === "0"){
-			solution = "7";
-			formula.pop();
-			formula.push("7");
-		} else if (solution.length < 11) {
-			formula.push("7");
-			solution = solution + "7";
-		}
-		$(".problem").html(formula);
-		$(".answer").html(solution);
-	});
-
-	$(".btn-8").on("click", function() {
-		if (typeof formula[0] === "number" && formula.length === 1) {
-			formula = [];
-			solution = "";
-		}
-		if (solution === "0"){
-			solution = "8";
-			formula.pop();
-			formula.push("8");
-		} else if (solution.length < 11) {
-			formula.push("8");
-			solution = solution + "8";
-		}
-		$(".problem").html(formula);
-		$(".answer").html(solution);
-	});
-
-	$(".btn-9").on("click", function() {
-		if (typeof formula[0] === "number" && formula.length === 1) {
-			formula = [];
-			solution = "";
-		}
-		if (solution === "0"){
-			solution = "9";
-			formula.pop();
-			formula.push("9");
-		} else if (solution.length < 11) {
-			formula.push("9");
-			solution = solution + "9";
-		}
-		$(".problem").html(formula);
-		$(".answer").html(solution);
-	});
+	};
 
 	$(".decimal").on("click", function() {
 		// Prevent multiple decimal points in an entry
@@ -233,16 +120,12 @@ $(document).ready(function() {
 		// evaluate the formula
 		var str = formula.join("");
 		var finalSolution = eval(str);
-		console.log("finalSolution " + finalSolution);
 		// Convert finalSolution to number
 		finalSolution = parseFloat(finalSolution);
-		console.log("finalSolution parseFloat " + finalSolution);
 		// Round to 11 decimal places
 		finalSolution = Math.round(100000000000 * finalSolution) / 100000000000;
-		console.log("finalSolution rounded " + finalSolution);
 		// Prevent scientific notation + remove trailing zeros credit: http://stackoverflow.com/questions/1015402/chop-unused-decimals-with-javascript
 		finalSolution = finalSolution.toFixed(11).replace(/(\.[0-9]*?)0+$/, "$1");
-		console.log("finalSolution toFixed " + finalSolution);
 		if (finalSolution > 99999999999 || finalSolution < -9999999999){
 			$(".answer").html("Overflow!");
 		} else {
