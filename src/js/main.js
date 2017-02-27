@@ -51,6 +51,98 @@ $(document).ready(function() {
 		}
 	});
 
+	// Handle keyboard entry
+	$(document).on("keypress", function(event) {
+		var keyCode = (event.keyCode ? event.keyCode : event.which);
+		var valu = "";
+		switch (keyCode) {
+		case 96:
+		case 48: 
+			valu = "0"; 
+			zero(valu);
+			break;
+		case 97:
+		case 49: 
+			valu = "1"; 
+			digit(valu);
+			break;
+		case 98:
+		case 50: 
+			valu = "2"; 
+			digit(valu);
+			break;
+		case 99:
+		case 51: 
+			valu = "3"; 
+			digit(valu);
+			break;
+		case 100:
+		case 52: 
+			valu = "4"; 
+			digit(valu);
+			break;
+		case 101:
+		case 53: 
+			valu = "5"; 
+			digit(valu);
+			break;
+		case 102:
+		case 54: 
+			valu = "6";
+			digit(valu); 
+			break;
+		case 103:
+		case 55: 
+			valu = "7";
+			digit(valu); 
+			break;
+		case 104:
+		case 56: 
+			valu = "8";
+			digit(valu); 
+			break;
+		case 105:
+		case 57: 
+			valu = "9"; 
+			digit(valu);
+			break;
+		case 110:
+		case 190: 
+			valu = ".";
+			decimal(valu); 
+			break;
+		case 43:	
+		case 107: 
+			valu = "+"; 
+			operator(valu);
+			break;
+		case 45:
+		case 109: 
+			valu = "-"; 
+			operator(valu);
+			break;
+		case 47:
+		case 111: 
+			valu = "/";
+			operator(valu); 
+			break;
+		case 42:
+		case 106: 
+			valu = "*";
+			operator(valu); 
+			break;
+		case 61:
+		case 13: 
+			equals();
+			break;
+		case 46: 
+			clear(); 
+			break;
+		default:
+			break;
+		}
+	});
+
 	function zero(val) {
 		// If formula already holds a value from a previous calculation and a number is clicked, clear formula
 		if (typeof formula[0] === "number" && formula.length === 1) {
