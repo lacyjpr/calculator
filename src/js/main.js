@@ -127,8 +127,10 @@ $(document).ready(function() {
 		if (finalSolution > 99999999999 || finalSolution < -9999999999){
 			$(".answer").html("Overflow!");
 		} else {
+			// Save finalSolution as a number so zero & digit functions work 
+			var finalSolution2 = parseFloat(finalSolution);
 			// Keep the final solution in formula
-			formula = [finalSolution];
+			formula = [finalSolution2];
 			solution = finalSolution.toString();
 			// Display the final solution
 			$(".answer").html(finalSolution);
