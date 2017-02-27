@@ -53,22 +53,24 @@ $(document).ready(function() {
 
 	// Handle keyboard entry
 	$(document).on("keypress", function(event) {
-		click.play();
 		var keyCode = (event.keyCode ? event.keyCode : event.which);
 		var valu = "";
 		switch (keyCode) {
 		case 96:
 		case 48: 
+			click.play();
 			valu = "0"; 
 			zero(valu);
 			break;
 		case 97:
-		case 49: 
+		case 49:
+			click.play(); 
 			valu = "1"; 
 			digit(valu);
 			break;
 		case 98:
-		case 50: 
+		case 50:
+			click.play(); 
 			valu = "2"; 
 			digit(valu);
 			break;
@@ -78,65 +80,78 @@ $(document).ready(function() {
 			digit(valu);
 			break;
 		case 100:
-		case 52: 
+		case 52:
+			click.play(); 
 			valu = "4"; 
 			digit(valu);
 			break;
 		case 101:
-		case 53: 
+		case 53:
+			click.play(); 
 			valu = "5"; 
 			digit(valu);
 			break;
 		case 102:
 		case 54: 
+			click.play();
 			valu = "6";
 			digit(valu); 
 			break;
 		case 103:
 		case 55: 
+			click.play();
 			valu = "7";
 			digit(valu); 
 			break;
 		case 104:
 		case 56: 
+			click.play();
 			valu = "8";
 			digit(valu); 
 			break;
 		case 105:
-		case 57: 
+		case 57:
+			click.play(); 
 			valu = "9"; 
 			digit(valu);
 			break;
 		case 110:
-		case 190: 
+		case 190:
+			click.play(); 
 			valu = ".";
 			decimal(valu); 
 			break;
 		case 43:	
 		case 107: 
+			click.play();
 			valu = "+"; 
 			operator(valu);
 			break;
 		case 45:
 		case 109: 
+			click.play();
 			valu = "-"; 
 			operator(valu);
 			break;
 		case 47:
-		case 111: 
+		case 111:
+			click.play(); 
 			valu = "/";
 			operator(valu); 
 			break;
 		case 42:
 		case 106: 
+			click.play();
 			valu = "*";
 			operator(valu); 
 			break;
 		case 61:
-		case 13: 
+		case 13:
+			click.play(); 
 			equals();
 			break;
 		case 46: 
+			click.play();
 			clear(); 
 			break;
 		default:
