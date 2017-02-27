@@ -240,7 +240,6 @@ $(document).ready(function() {
 			// Keep the final solution in formula
 			formula = [finalSolution2];
 			solution = finalSolution;
-			console.log(typeof(solution));
 			// Display the final solution
 			$(".answer").html(finalSolution);
 		}
