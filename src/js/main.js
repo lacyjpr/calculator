@@ -3,7 +3,7 @@ $(document).ready(function() {
 	var formula = [];
 	// String to hold the current entry & solution
 	var solution = "";
-	var click = new Audio("calculator/media/click.mp3");
+	var click = new Audio("/calculator/media/click.mp3");
 
 	// Handle button clicks
 	$(".btn").on("click", function() {
