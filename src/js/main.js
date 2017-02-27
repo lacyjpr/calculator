@@ -239,7 +239,8 @@ $(document).ready(function() {
 			var finalSolution2 = parseFloat(finalSolution);
 			// Keep the final solution in formula
 			formula = [finalSolution2];
-			solution = finalSolution.toString();
+			solution = finalSolution;
+			console.log(typeof(solution));
 			// Display the final solution
 			$(".answer").html(finalSolution);
 		}
