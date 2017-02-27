@@ -53,6 +53,7 @@ $(document).ready(function() {
 
 	// Handle keyboard entry
 	$(document).on("keypress", function(event) {
+		click.play();
 		var keyCode = (event.keyCode ? event.keyCode : event.which);
 		var valu = "";
 		switch (keyCode) {
