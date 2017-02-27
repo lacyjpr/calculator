@@ -229,7 +229,7 @@ $(document).ready(function() {
 		finalSolution = Math.round(100000000000 * finalSolution) / 100000000000;
 		// Prevent scientific notation + remove trailing zeros credit: http://stackoverflow.com/questions/1015402/chop-unused-decimals-with-javascript
 		finalSolution = finalSolution.toFixed(11).replace(/(\.[0-9]*?)0+$/, "$1");
-		// Remove trailing decimal points credit: credit: http://stackoverflow.com/questions/1015402/chop-unused-decimals-with-javascript
+		// Remove trailing decimal points credit: http://stackoverflow.com/questions/1015402/chop-unused-decimals-with-javascript
 		finalSolution = finalSolution.replace(/\.$/, "");
 		// Prevent answers too long for display
 		if (finalSolution > 99999999999 || finalSolution < -9999999999){
