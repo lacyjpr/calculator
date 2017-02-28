@@ -7,7 +7,6 @@ $(document).ready(function() {
 
 	// Handle button clicks
 	$(".btn").on("click", function() {
-		click.play();
 		var val = ($(this).text());
 		switch (val) {
 		case "0":
