@@ -58,101 +58,84 @@ $(document).ready(function() {
 		switch (keyCode) {
 		case 96:
 		case 48: 
-			click.play();
 			valu = "0"; 
 			zero(valu);
 			break;
 		case 97:
 		case 49:
-			click.play(); 
 			valu = "1"; 
 			digit(valu);
 			break;
 		case 98:
 		case 50:
-			click.play(); 
 			valu = "2"; 
 			digit(valu);
 			break;
 		case 99:
 		case 51:
-			click.play();
 			valu = "3"; 
 			digit(valu);
 			break;
 		case 100:
 		case 52:
-			click.play(); 
 			valu = "4"; 
 			digit(valu);
 			break;
 		case 101:
 		case 53:
-			click.play(); 
 			valu = "5"; 
 			digit(valu);
 			break;
 		case 102:
 		case 54: 
-			click.play();
 			valu = "6";
 			digit(valu); 
 			break;
 		case 103:
 		case 55: 
-			click.play();
 			valu = "7";
 			digit(valu); 
 			break;
 		case 104:
 		case 56: 
-			click.play();
 			valu = "8";
 			digit(valu); 
 			break;
 		case 105:
 		case 57:
-			click.play(); 
 			valu = "9"; 
 			digit(valu);
 			break;
 		case 110:
 		case 190:
-			click.play(); 
 			valu = ".";
 			decimal(valu); 
 			break;
 		case 43:	
 		case 107: 
-			click.play();
 			valu = "+"; 
 			operator(valu);
 			break;
 		case 45:
 		case 109: 
-			click.play();
 			valu = "-"; 
 			operator(valu);
 			break;
 		case 47:
 		case 111:
-			click.play(); 
 			valu = "/";
 			operator(valu); 
 			break;
 		case 42:
 		case 106: 
-			click.play();
 			valu = "*";
 			operator(valu); 
 			break;
 		case 61:
 		case 13:
-			click.play(); 
 			equals();
 			break;
 		case 46: 
-			click.play();
 			clear(); 
 			break;
 		default:
@@ -161,6 +144,8 @@ $(document).ready(function() {
 	});
 
 	function zero(val) {
+		// Play sound on function call
+		click.play();
 		// If formula already holds a value from a previous calculation and a number is clicked, clear formula
 		if (typeof formula[0] === "number" && formula.length === 1) {
 			formula = [];
@@ -180,6 +165,7 @@ $(document).ready(function() {
 	}
 
 	function digit(val) {
+		click.play();
 		if (typeof formula[0] === "number" && formula.length === 1) {
 			formula = [];
 			solution = "";
@@ -200,6 +186,7 @@ $(document).ready(function() {
 	}
 
 	function decimal(val) {
+		click.play();
 		// Prevent multiple decimal points in an entry
 		if (solution.length < 11 && solution.indexOf(".") === -1) {
 			formula.push(val);
@@ -210,6 +197,7 @@ $(document).ready(function() {
 	}
 
 	function operator(val){
+		click.play();
 		// Prevent multiple operators in a row & at the start of a formula
 		if (formula[formula.length -1] !== "+" && formula[formula.length -1] !== "-" && formula[formula.length -1] !== "*" && formula[formula.length -1] !== "/" && formula[formula.length -1] !== "." && formula.length > 0) {
 			formula.push(val);
@@ -221,6 +209,7 @@ $(document).ready(function() {
 	}
 
 	function equals() {
+		click.play();
 		// evaluate the formula
 		var str = formula.join("");
 		var finalSolution = eval(str);
@@ -247,6 +236,7 @@ $(document).ready(function() {
 	}
 
 	function allClear() {
+		click.play();
 		formula = [];
 		solution = "";
 
@@ -255,6 +245,7 @@ $(document).ready(function() {
 	}
 
 	function clear() {
+		click.play();
 		formula.splice(-1,1);
 		solution = solution.substring(0, solution.length -1);
 		$(".problem").html(formula);
