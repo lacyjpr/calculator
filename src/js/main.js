@@ -75,7 +75,8 @@ $(document).ready(function() {
 			digit(valu);
 			break;
 		case 99:
-		case 51: 
+		case 51:
+			click.play();
 			valu = "3"; 
 			digit(valu);
 			break;
