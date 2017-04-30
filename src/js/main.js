@@ -150,10 +150,10 @@ $(document).ready(function() {
 			formula = [];
 			solution = "";
 		}
-		// Push the digit into formula if solution's length is less than 11
+		// Push the digit into formula if solution's length is less than 10
 		// If solution already contains only a zero do nothing
 		// Prevent divide by zero
-		if (solution.length < 11 && solution !== "0" && formula[formula.length -1] !== "/") {
+		if (solution.length < 10 && solution !== "0" && formula[formula.length -1] !== "/") {
 			formula.push(val);
 			solution = solution + val;
 		}
@@ -175,8 +175,8 @@ $(document).ready(function() {
 			formula.pop();
 			formula.push(val);
 		}
-		// Push the digit into formula if solution's length is less than 11
-		else if (solution.length < 11) {
+		// Push the digit into formula if solution's length is less than 10
+		else if (solution.length < 10) {
 			formula.push(val);
 			solution = solution + val;
 		}
@@ -187,7 +187,7 @@ $(document).ready(function() {
 	function decimal(val) {
 		click.play();
 		// Prevent multiple decimal points in an entry
-		if (solution.length < 11 && solution.indexOf(".") === -1) {
+		if (solution.length < 10 && solution.indexOf(".") === -1) {
 			formula.push(val);
 			solution = solution + val;
 		}
@@ -214,14 +214,14 @@ $(document).ready(function() {
 		var finalSolution = eval(str);
 		// Convert finalSolution to number
 		finalSolution = parseFloat(finalSolution);
-		// Round to 11 decimal places
-		finalSolution = Math.round(100000000000 * finalSolution) / 100000000000;
+		// Round to 10 decimal places
+		finalSolution = Math.round(10000000000 * finalSolution) / 10000000000;
 		// Prevent scientific notation + remove trailing zeros credit: http://stackoverflow.com/questions/1015402/chop-unused-decimals-with-javascript
-		finalSolution = finalSolution.toFixed(11).replace(/(\.[0-9]*?)0+$/, "$1");
+		finalSolution = finalSolution.toFixed(10).replace(/(\.[0-9]*?)0+$/, "$1");
 		// Remove trailing decimal points credit: http://stackoverflow.com/questions/1015402/chop-unused-decimals-with-javascript
 		finalSolution = finalSolution.replace(/\.$/, "");
 		// Prevent answers too long for display
-		if (finalSolution > 99999999999 || finalSolution < -9999999999){
+		if (finalSolution > 9999999999 || finalSolution < -999999999){
 			$(".answer").html("Overflow!");
 		} else {
 			// Save finalSolution as a number so zero & digit functions work 
