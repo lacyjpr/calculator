@@ -7,6 +7,7 @@
   "license": "MIT",
   "dependencies": {
     "critical": "^0.8.4",
+    "gulp": "^3.9.1",
     "gulp-clean-css": "^3.7.0",
     "gulp-htmlmin": "^3.0.0",
     "gulp-rename": "^1.2.2",
