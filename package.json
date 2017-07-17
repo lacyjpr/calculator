@@ -1,0 +1,15 @@
+{
+  "name": "calculator",
+  "version": "1.0.0",
+  "main": "index.html",
+  "repository": "https://github.com/lacyjpr/calculator.git",
+  "author": "Jean-Paul Lacy <lacyjpr@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "critical": "^0.8.4",
+    "gulp-clean-css": "^3.7.0",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^3.0.0"
+  }
+}
